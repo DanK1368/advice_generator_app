@@ -20,8 +20,8 @@ Your users should be able to:
 
 ![](images/screenshot.png)
 
-- Solution URL: [Add solution URL here](https://github.com/DanK1368/advice_generator_app)
-- Live Site URL: [Add live site URL here](https://dank1368.github.io/advice_generator_app/)
+- Solution URL: [Click Here](https://github.com/DanK1368/advice_generator_app)
+- Live Site URL: [Click Here](https://dank1368.github.io/advice_generator_app/)
 
 ## My process
 
