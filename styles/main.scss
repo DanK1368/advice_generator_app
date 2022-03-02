@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px
+}
+
+// Colors
+
+$primary-color: hsl(150, 100%, 66%);
+$secondary-color: hsl(193, 38%, 86%);
+
+$main-bg-color: hsl(218, 23%, 16%);
+$container-bg-color: hsl(217, 19%, 24%);
+
+// Font Family
+
+$main-font: "Manrope", sans-serif;
+
+// Font Sizes
+
+$advice-text-size: 2.8rem;
+$advice-number-size: 1.4rem;
+
+// mixins
+
+@mixin flex($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin smlScreen {
+  @media only screen and (max-width: 539px) {
+    @content;
+  }
+}
+
+@mixin lgScreen {
+  @media only screen and (min-width: 540px) {
+    @content;
+  }
+}
+
+.--advice-text-style {
+  font-size: $advice-text-size;
+  font-weight: 800;
+  color: $secondary-color;
+  text-align: center;
+
+  @include smlScreen {
+    font-size: calc(1.8rem + 1vw);
+  }
+}
+
+.--advice-number-style {
+  font-size: $advice-number-size;
+  font-weight: 400;
+  color: $primary-color;
+  letter-spacing: 3px;
+
+  @include smlScreen {
+    font-size: calc(0.7rem + 1vw);
+  }
+}
+
+.desktop__image,
+.mobile__image {
+  width: 100%;
+}
+
+.desktop__image {
+  @include smlScreen {
+    display: none;
+  }
+}
+.mobile__image {
+  @include lgScreen {
+    display: none;
+  }
+}
+
+body {
+  font-family: $main-font;
+  background: $main-bg-color;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: $container-bg-color;
+  width: clamp(343px, 95%, 540px);
+  margin: auto;
+  height: 364px;
+  border-radius: 5%;
+  @include flex(column, center, center);
+  gap: 3.5rem;
+  position: relative;
+
+  &__image__wrapper {
+    width: 80%;
+  }
+
+  &__advice__text {
+    width: 80%;
+  }
+}
+
+// button
+
+.container__button {
+  width: 64px;
+  height: 64px;
+  background: $primary-color;
+  display: grid;
+  place-content: center;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 30px $primary-color;
+  }
+}
