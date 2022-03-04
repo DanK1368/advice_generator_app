@@ -3,7 +3,9 @@ const adviceNum = document.querySelector(".adviceID");
 const adviceMsg = document.querySelector(".container__advice__text");
 
 const getAdvice = async () => {
-  const response = await fetch("https://api.adviceslip.com/advice");
+  const response = await fetch("https://api.adviceslip.com/advice", {
+    cache: "no-cache",
+  });
   const data = await response.json();
   const adviceText = await data.slip.advice;
   const adviceID = await data.slip.id;
