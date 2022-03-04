@@ -91,4 +91,37 @@ body {
 }
 .container__button:hover {
   box-shadow: 0 0 30px #52ffa8;
+}
+
+.animate1 {
+  -webkit-animation: animate1 0.5s ease;
+          animation: animate1 0.5s ease;
+}
+
+@-webkit-keyframes animate1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate2 {
+  -webkit-animation: animate2 0.5s ease;
+          animation: animate2 0.5s ease;
+}
+
+@-webkit-keyframes animate2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes animate2 {
+  to {
+    transform: rotate(-360deg);
+  }
 }/*# sourceMappingURL=main.css.map */
